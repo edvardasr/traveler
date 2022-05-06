@@ -66,18 +66,21 @@ public class Repository {
 		}
 
 		File file = null;
-		if (AUTUMN.contains(String.valueOf(month))) {
+		String monthStr = String.valueOf(month);
+		monthStr = monthStr.length() == 1 ? "0" + monthStr : monthStr;
+		
+		if (AUTUMN.contains(monthStr)) {
 			file = FileUtils.toFile(getClass().getClassLoader().getResource(ITEMS_AUTUMN));
 			backpack.setTimeOfYear(RUDUO);
 		} else if (WINTER.contains(String.valueOf(month))) {
 			file = FileUtils.toFile(getClass().getClassLoader().getResource(ITEMS_WINTER));
 			backpack.setTimeOfYear(ŽIEMA);
 
-		} else if (SPRING.contains(String.valueOf(month))) {
+		} else if (SPRING.contains(monthStr)) {
 			file = FileUtils.toFile(getClass().getClassLoader().getResource(ITEMS_SPRING));
 			backpack.setTimeOfYear(PAVASARIS);
 
-		} else if (SUMMER.contains(String.valueOf(month))) {
+		} else if (SUMMER.contains(monthStr)) {
 			file = FileUtils.toFile(getClass().getClassLoader().getResource(ITEMS_SUMMER));
 			backpack.setTimeOfYear(VASARA);
 
