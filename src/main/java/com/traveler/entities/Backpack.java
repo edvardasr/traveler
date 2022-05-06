@@ -73,7 +73,7 @@ public class Backpack {
 	@Override
 	public String toString() {
 		return "Kuprinė [atstumas=" + distance + ", kūno svoris=" + bodyWeight + ", data=" + date + ", metų laikas="
-				+ timeOfYear + ", kalorijų kiekis=" + requiredCalories + ", vandens kiekis=" + requiredWater
-				+ ", rekuomenduojami maisto produktai=" + foodItems + ", rekuomenduojami daiktai=" + personalBelongings + "]";
+				+ timeOfYear + ", kalorijų kiekis=" + requiredCalories + "(kcal), vandens kiekis=" + requiredWater
+				+ "L , rekuomenduojami maisto produktai=" + foodItems + ", rekuomenduojami daiktai=" + personalBelongings + "]";
 	}
 }

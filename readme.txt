@@ -7,5 +7,9 @@ Naudojimas.
 3. Naujame puslapyje galima matyti rekomenduojamą kuprinės sudėtį.
 
 Resursuose yra patalpinti keturi failai, kaip "ItemsAutumn", kur įrašyti tam metų laikui rekomenduojami daiktai.
-Taip pat yra failas "FoodItems", kur surašyti rekomenduojami maisto produktai. Failai naudojami su tikslu, kad būtų galima
-lengvai koniguruoti, keisti sąrašus.
+
+Taip pat yra failas "FoodItems", kur surašyti rekomenduojami maisto produktai. Šalia maisto produkto, 
+skliausteliuose ir atskirti kalbleliu, gali būti įrašyti produkto kiekis racione procentais ir šimto gramų energetinė vertė, 
+tada bus paskaičiuota kiek gramų produkto reikia paimti. 
+
+Failai naudojami su tikslu, kad būtų galima lengvai koniguruoti, keisti sąrašus.

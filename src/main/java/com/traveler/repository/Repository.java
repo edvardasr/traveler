@@ -3,6 +3,7 @@ package com.traveler.repository;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
@@ -68,7 +69,7 @@ public class Repository {
 		File file = null;
 		String monthStr = String.valueOf(month);
 		monthStr = monthStr.length() == 1 ? "0" + monthStr : monthStr;
-		
+
 		if (AUTUMN.contains(monthStr)) {
 			file = FileUtils.toFile(getClass().getClassLoader().getResource(ITEMS_AUTUMN));
 			backpack.setTimeOfYear(RUDUO);
@@ -101,6 +102,26 @@ public class Repository {
 		requiredWater = Math.round(requiredWater * 100.0) / 100.0;
 		backpack.setRequiredCalories(requiredCalories);
 		backpack.setRequiredWater(requiredWater);
+		
+		List<String> foodItems = backpack.getFoodItems();
+		
+		for(int i = 0; i < foodItems.size(); i++) {
+			String item = foodItems.get(i);
+			item = item.replaceAll(" ", "");
+			String[] itemSplit = item.split("\\(");
+			if (itemSplit.length > 1) {
+				itemSplit = itemSplit[1].split(",");
+				itemSplit[1] = itemSplit[1].replaceAll("\\)", "");
+							
+				Double amount = requiredCalories * Double.valueOf(itemSplit[0]) / Double.valueOf(itemSplit[1]);
+				amount = Math.round(amount * 100.0) / 100.0;
+
+				item = item + " " + String.valueOf(amount) + "g";
+				
+				foodItems.set(i, item);
+			}
+			
+		}
 
 		return backpack;
 	}
