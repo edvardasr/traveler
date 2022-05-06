@@ -3,7 +3,7 @@
 <html>
 <head>
 
-<title>Tavo klionės vadovas</title>
+<title>Tavo kelionės vadovas</title>
 </head>
 
 <body>

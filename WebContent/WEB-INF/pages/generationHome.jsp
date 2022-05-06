@@ -12,10 +12,6 @@
           <td><input type="submit" name="add" value=Pradėti /></td> 
         </form>
       </tr>
-	 
-	 
-   
-   	 </form>
     </table>
 </body>
 </html>
